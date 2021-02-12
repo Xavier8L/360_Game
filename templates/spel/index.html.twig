@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 class="text-info text-center">Game List</h1>
+
+    <table class="table table-bordered">
+
+        <thead class="text-center">
+        <tr>
+            <td class="thead">Spel naam</td>
+            <td class="thead">Type</td>
+            <td class="thead">Bester speler</td>
+            <td class="thead">highscore</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for spel in spels %}
+            <tr class="text-center tr2">
+                <td>
+                    {{ spel.naam }}
+                </td>
+
+                <td>
+                    {{ spel.type }}
+
+                </td>
+
+                <td>
+                    {{ spel.speler.naam }}
+                </td>
+
+                <td>
+                    <a href="#">video</a>
+                </td>
+
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
